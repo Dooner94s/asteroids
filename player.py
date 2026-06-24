@@ -42,9 +42,7 @@ class Player(CircleShape):
             self.shoot()
 
         if self.shoot_cooldown > 0:
-            self.shoot_cooldown -= dt
-        #else:
-        #    self.shoot_cooldown = 0
+            self.shoot_cooldown = max(0, self.shoot_cooldown - dt)
 
     def move(self, dt):
         unit_vector = pygame.Vector2(0, 1)
